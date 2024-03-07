@@ -1,5 +1,5 @@
 import pool from '../../db.js';
-import { getSuppliersQuery, addSupplierQuery, getSupplierQuery, updateSupplierQuery } from './queries.js';
+import { getSuppliersQuery, addSupplierQuery, getSupplierQuery, updateSupplierQuery, deleteSupplierQuery } from './queries.js';
 
 const getSuppliers = (req, res) => {
     pool.query(getSuppliersQuery, (error, results) => {
@@ -25,15 +25,14 @@ const addSupplier = (req, res) => {
 };
 
 const getSupplier = (req, res) => {
-    const id = req.params;
-    const { supplierid } = id;
+    const { supplierid } = req.params;
 
     pool.query(getSupplierQuery, [ supplierid ], (error, results) => {
         if (error) {
             return res.status(500).json({ msg: error});
         } else {
             if (results.rows.length === 0) {
-                return res.status(404).send({ msg: `Supplier id no.${ supplierid } not found` });
+                return res.status(404).send(`msg: SupplierID: ${supplierid} not found`);
             } else {
             res.status(200).json(results.rows);
             }
@@ -49,9 +48,21 @@ const updateSupplier = (req, res) => {
         if (error) {
             return res.status(500).json({ msg: error });
         } else {
-            res.status(200).send(`Supplier id no.${supplierid} updated successfully`);
+            res.status(200).send(`SupplierID: ${supplierid} updated`);
         }
     })
 }
 
-export { getSuppliers, addSupplier, getSupplier, updateSupplier };
+const deleteSupplier = (req, res) => {
+    const { supplierid } = req.params;
+
+    pool.query(deleteSupplierQuery, [ supplierid ], (error, results) => {
+        if (error) {
+            return res.status(500).json({ msg: error });
+        } else {
+            res.status(200).send(`SupplierID: ${supplierid} deleted`)
+        }
+    })
+}
+
+export { getSuppliers, addSupplier, getSupplier, updateSupplier, deleteSupplier };

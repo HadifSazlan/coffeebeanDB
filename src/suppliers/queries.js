@@ -1,6 +1,13 @@
-const getSuppliersQuery = 'SELECT * FROM suppliers';
+import {db} from "../../db.js";
+import {suppliers} from "../../db/schema/suppliers.js";
 
-const addSupplierQuery = 'INSERT INTO suppliers (suppliername, contactemail, contactphone) VALUES ($1, $2, $3)';
+const findManySuppliers = async () => {
+    return db.select().from(suppliers);
+};
+
+const addSupplier = async (data) => {
+    return db.insert(suppliers).values(data).returning();
+};
 
 const getSupplierQuery = 'SELECT * FROM suppliers WHERE supplierid = $1';
 
@@ -8,4 +15,4 @@ const updateSupplierQuery = 'UPDATE suppliers SET suppliername = $1, contactemai
 
 const deleteSupplierQuery = 'DELETE FROM suppliers WHERE supplierid = $1';
 
-export { getSuppliersQuery, addSupplierQuery, getSupplierQuery, updateSupplierQuery, deleteSupplierQuery };
+export { findManySuppliers, addSupplier, getSupplierQuery, updateSupplierQuery, deleteSupplierQuery };

@@ -1,3 +1,4 @@
+/*
 import pool from '../../db.js';
 
 import { getBeansQuery, addBeanQuery, getBeanQuery, updateBeanQuery, deleteBeanQuery } from './queries.js';
@@ -61,4 +62,4 @@ const deleteBean = (req, res) => {
     })
 };
 
-export { getBeans, addBean, getBean, updateBean, deleteBean };
+export { getBeans, addBean, getBean, updateBean, deleteBean };*/

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getBeans, addBean, getBean, updateBean, deleteBean } from '../beansprofile/controller.js';
+import { getBeans, addBean, getBean, updateBean, deleteBean } from './controller.js';
 
 const router = Router();
 

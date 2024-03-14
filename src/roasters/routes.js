@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getRoasters, addRoaster, getRoaster, updateRoaster, deleteRoaster } from '../roasters/controller.js';
+import { getRoasters, addRoaster, getRoaster, updateRoaster, deleteRoaster } from './controller.js';
 
 const router = Router();
 

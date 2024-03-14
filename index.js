@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import suppliersRoutes from './src/suppliers/routes.js';
-import beansRoutes from './src2/beansprofile/routes.js';
-import roastersRoutes from './src3/roasters/routes.js';
+import beansRoutes from './src/beansprofile/routes.js';
+import roastersRoutes from './src/roasters/routes.js';
 
 const app = express();
 const PORT = 3000;

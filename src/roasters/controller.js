@@ -1,3 +1,4 @@
+/*
 import pool from '../../db.js';
 
 import { getRoastersQuery, addRoasterQuery, getRoasterQuery, updateRoasterQuery, deleteRoasterQuery } from './queries.js';
@@ -61,4 +62,4 @@ const deleteRoaster = (req, res) => {
     })
 };
 
-export { getRoasters, addRoaster, getRoaster, updateRoaster, deleteRoaster };
+export { getRoasters, addRoaster, getRoaster, updateRoaster, deleteRoaster };*/

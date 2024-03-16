@@ -4,6 +4,7 @@ dotenv.config();
 
 import {drizzle} from "drizzle-orm/node-postgres";
 import pkg from 'pg';
+
 const {Client} = pkg;
 
 const host = process.env.DB_HOST ?? 'localhost';
@@ -18,12 +19,6 @@ const client = new Client({
     connectionString: connectionString,
 });
 
-try {
-    await client.connect();
-} catch (err) {
-    console.error('Error connecting to PostgreSQL database:', err);
-}
+await client.connect();
 
-const db = drizzle(client);
-
-export { db };
+export const db = drizzle(client);

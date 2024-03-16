@@ -10,8 +10,8 @@ const password = process.env.DB_PASSWORD ?? 'your_password';
 const connectionString = `postgresql://${user}:${password}@${host}:${port}/${database}`;
 
 const config: Config = {
-    schema: './db/schema/*',
-    out: './db/migrations',
+    schema: './src/db/schema/*',
+    out: './src/db/migrations',
     driver: 'pg',
     dbCredentials: {
         connectionString: connectionString

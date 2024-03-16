@@ -1,4 +1,4 @@
-import {db} from "../../db.js";
+import {db} from "../../config/db.js";
 import {suppliers} from "../../db/schema/suppliers.js";
 
 const findManySuppliers = async () => {

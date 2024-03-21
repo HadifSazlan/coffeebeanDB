@@ -1,9 +1,9 @@
 import {
     findManySuppliers,
     addSupplier,
-    getSupplierQuery,
-    updateSupplierQuery,
-    deleteSupplierQuery,
+    findOneSupplier,
+    updateSupplier,
+    deleteSupplier,
 } from './queries.js';
 
 const index = async (req, res) => {
@@ -16,9 +16,9 @@ const index = async (req, res) => {
 };
 
 const store = async (req, res) => {
-    const {name, email, phone} = req.body;
+    const {name, email, phone, beanId} = req.body;
 
-    const data = {name, email, phone}
+    const data = {name, email, phone, beanId}
     try {
         const supplier = await addSupplier(data)
         res.status(200).json(supplier);
@@ -27,45 +27,39 @@ const store = async (req, res) => {
     }
 };
 
-const getSupplier = (req, res) => {
-    const {supplierid} = req.params;
+const fetch = async (req, res) => {
+    const {id} = req.params;
 
-    pool.query(getSupplierQuery, [supplierid], (error, results) => {
-        if (error) {
-            return res.status(500).json({msg: error});
-        } else {
-            if (results.rows.length === 0) {
-                return res.status(404).send(`msg: SupplierID: ${supplierid} not found`);
-            } else {
-                res.status(200).json(results.rows);
-            }
-        }
-    })
+    try{
+        const supplier = await findOneSupplier(id)
+        res.status(200).json(supplier);
+    } catch (e) {
+        res.status(500).json({msg: e.message || ' Internal server error'});
+    }
 };
 
-const updateSupplier = (req, res) => {
-    const {supplierid} = req.params;
-    const {suppliername, contactemail, contactphone} = req.body;
+const update = async (req,res) => {
+    const {id} = req.params;
+    const {name, email, phone, beanId} = req.body;
 
-    pool.query(updateSupplierQuery, [suppliername, contactemail, contactphone, supplierid], (error, results) => {
-        if (error) {
-            return res.status(500).json({msg: error});
-        } else {
-            res.status(200).send(`SupplierID: ${supplierid} updated`);
-        }
-    })
+    const data = {name, email, phone, beanId}
+    try {
+        const supplier = await updateSupplier(data, id)
+        res.status(200).json(supplier)
+    } catch (e) {
+        res.status(500).json({msg: e.message || 'Internal server error'});
+    }
 };
 
-const deleteSupplier = (req, res) => {
-    const {supplierid} = req.params;
+const remove = async (req, res) => {
+    const {id} = req.params;
 
-    pool.query(deleteSupplierQuery, [supplierid], (error, results) => {
-        if (error) {
-            return res.status(500).json({msg: error});
-        } else {
-            res.status(200).send(`SupplierID: ${supplierid} deleted`);
-        }
-    })
+    try{
+        const supplier = await deleteSupplier(id)
+        res.status(200).json(supplier);
+    } catch (e) {
+        res.status(500).json({msg: e.message || ' Internal server error'});
+    }
 };
 
-export {index, store, getSupplier, updateSupplier, deleteSupplier};
+export {index, store, fetch, update, remove};

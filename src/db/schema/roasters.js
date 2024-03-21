@@ -1,7 +1,7 @@
 import {pgTable, serial, varchar, integer, timestamp} from "drizzle-orm/pg-core";
 import {beanology} from "./beanology.js";
 
-export const suppliers = pgTable('suppliers', {
+export const roasters = pgTable('roasters', {
     id: serial('id').primaryKey(),
     name: varchar('name', {length: 70}),
     email: varchar('email', {length: 50}),

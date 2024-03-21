@@ -39,7 +39,7 @@
    ```
 9. To push the sql migrations: 
    ```
-   npm run generate
+   npm run push
    ```
 
 ## References

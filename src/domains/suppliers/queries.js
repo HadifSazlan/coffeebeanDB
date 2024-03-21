@@ -1,5 +1,6 @@
 import {db} from "../../config/db.js";
 import {suppliers} from "../../db/schema/suppliers.js";
+import {eq} from "drizzle-orm";
 
 const findManySuppliers = async () => {
     return db.select().from(suppliers);
@@ -9,10 +10,16 @@ const addSupplier = async (data) => {
     return db.insert(suppliers).values(data).returning();
 };
 
-const getSupplierQuery = 'SELECT * FROM suppliers WHERE supplierid = $1';
+const findOneSupplier = async (id) => {
+    return db.select().from(suppliers).where(eq(suppliers.id, id));
+};
 
-const updateSupplierQuery = 'UPDATE suppliers SET suppliername = $1, contactemail = $2, contactphone = $3 WHERE supplierid = $4';
+const updateSupplier = async (data, id) => {
+    return db.update(suppliers).set(data).where(eq(suppliers.id, id)).returning();
+}
 
-const deleteSupplierQuery = 'DELETE FROM suppliers WHERE supplierid = $1';
+const deleteSupplier = async (id) => {
+    return db.delete(suppliers).where(eq(suppliers.id, id)).returning();
+}
 
-export { findManySuppliers, addSupplier, getSupplierQuery, updateSupplierQuery, deleteSupplierQuery };
+export {findManySuppliers, addSupplier, findOneSupplier, updateSupplier, deleteSupplier};

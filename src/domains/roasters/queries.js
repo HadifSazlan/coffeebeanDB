@@ -1,11 +1,25 @@
-const getRoastersQuery = 'SELECT * FROM roasters';
+import {db} from "../../config/db.js";
+import {roasters} from "../../db/schema/roasters.js";
+import {eq} from "drizzle-orm";
 
-const addRoasterQuery = 'INSERT INTO roasters (roastername, contactemail, contactphone, beanid) VALUES ($1, $2, $3, $4)';
+const findManyRoasters = async () => {
+    return db.select().from(roasters);
+};
 
-const getRoasterQuery = 'SELECT * FROM roasters WHERE roasterid = $1';
+const addRoaster = async (data) => {
+    return db.insert(roasters).values(data).returning();
+};
 
-const updateRoasterQuery = 'UPDATE roasters SET roastername = $1, contactemail = $2, contactphone = $3, beanid = $4 WHERE roasterid = $5';
+const findOneRoaster = async (id) => {
+    return db.select().from(roasters).where(eq(roasters.id, id));
+};
 
-const deleteRoasterQuery = 'DELETE FROM roasters WHERE roasterid = $1';
+const updateRoaster = async (data, id) => {
+    return db.update(roasters).set(data).where(eq(roasters.id, id)).returning();
+}
 
-export { getRoastersQuery, addRoasterQuery, getRoasterQuery, updateRoasterQuery, deleteRoasterQuery };
+const deleteRoaster = async (id) => {
+    return db.delete(roasters).where(eq(roasters.id, id)).returning();
+}
+
+export {findManyRoasters, addRoaster, findOneRoaster, updateRoaster, deleteRoaster};

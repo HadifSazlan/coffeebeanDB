@@ -1,27 +1,27 @@
 import {
-  findManyRoasters,
-  addRoaster,
-  findOneRoaster,
-  updateRoaster,
-  deleteRoaster,
+  findManyBeans,
+  addBean,
+  findOneBean,
+  updateBean,
+  deleteBean,
 } from './queries.js';
 
 const index = async (req, res) => {
   try {
-      const roasters = await findManyRoasters()
-      res.status(200).json(roasters);
+      const beans = await findManyBeans()
+      res.status(200).json(beans);
   } catch (e) {
       res.status(500).json({msg: e.message || 'Internal server error'});
   }
 };
 
 const store = async (req, res) => {
-  const {name, email, phone, beanId} = req.body;
+  const {origin, flavor, process, altitude} = req.body;
 
-  const data = {name, email, phone, beanId}
+  const data = {origin, flavor, process, altitude}
   try {
-      const roaster = await addRoaster(data)
-      res.status(200).json(roaster);
+      const bean = await addBean(data)
+      res.status(200).json(bean);
   } catch (e) {
       res.status(500).json({msg: e.message || 'Internal server error'});
   }
@@ -31,8 +31,8 @@ const fetch = async (req, res) => {
   const {id} = req.params;
 
   try{
-      const roaster = await findOneRoaster(id)
-      res.status(200).json(roaster);
+      const bean = await findOneBean(id)
+      res.status(200).json(bean);
   } catch (e) {
       res.status(500).json({msg: e.message || ' Internal server error'});
   }
@@ -40,12 +40,12 @@ const fetch = async (req, res) => {
 
 const update = async (req,res) => {
   const {id} = req.params;
-  const {name, email, phone, beanId} = req.body;
+  const {origin, flavor, process, altitude} = req.body;
 
-  const data = {name, email, phone, beanId}
+  const data = {origin, flavor, process, altitude}
   try {
-      const roaster = await updateRoaster(data, id)
-      res.status(200).json(roaster)
+      const bean = await updateBean(data, id)
+      res.status(200).json(bean)
   } catch (e) {
       res.status(500).json({msg: e.message || 'Internal server error'});
   }
@@ -55,8 +55,8 @@ const remove = async (req, res) => {
   const {id} = req.params;
 
   try{
-      const roaster = await deleteRoaster(id)
-      res.status(200).json(roaster);
+      const bean = await deleteBean(id)
+      res.status(200).json(bean);
   } catch (e) {
       res.status(500).json({msg: e.message || ' Internal server error'});
   }

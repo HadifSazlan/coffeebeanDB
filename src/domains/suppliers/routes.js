@@ -1,14 +1,14 @@
 import {Router} from 'express';
 
-import {index, store, getSupplier, updateSupplier, deleteSupplier} from './controller.js';
+import {index, store, fetch, update, remove} from './controller.js';
 import {authenticateJWT} from "../../middlewares/authMiddleware.js";
 
 const router = Router();
 
 router.get('/', authenticateJWT, index);
 router.post('/', authenticateJWT, store);
-router.get('/:supplierid', getSupplier);
-router.put('/:supplierid', updateSupplier);
-router.delete('/:supplierid', deleteSupplier);
+router.get('/:id', authenticateJWT, fetch);
+router.put('/:id', authenticateJWT, update);
+router.delete('/:id', authenticateJWT, remove);
 
 export default router;

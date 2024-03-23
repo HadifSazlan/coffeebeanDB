@@ -33,13 +33,13 @@
    ```
 6. `npm install`
 7. `npm start`
-8. To generate mysql files based on migration schema: 
+8. To generate mysql files and run migration 
    ```
-   npm run generate
+   npm run migrate
    ```
-9. To push the sql migrations: 
+9. To seed the database with test data
    ```
-   npm run push
+   npm run db:seed
    ```
 
 ## References

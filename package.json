@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "nodemon src/index.js",
-    "generate": "drizzle-kit generate:pg",
-    "push": "drizzle-kit push:pg"
+    "migration:generate": "drizzle-kit generate:pg",
+    "migration:push": "drizzle-kit push:pg",
+    "migrate": "drizzle-kit generate:pg && drizzle-kit push:pg",
+    "db:seed": "node -r esbuild-register src/db/seeders/testSeeder.js"
   },
   "keywords": [],
   "author": "",

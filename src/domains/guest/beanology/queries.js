@@ -14,6 +14,7 @@ const findMany = async () => {
         altitude: beanology.altitude,
         roasterId: roasters.id,
         roasterName: roasters.name,
+        roasterSlug: roasters.slug,
         supplierId: suppliers.id,
         supplierName: suppliers.name
     })
@@ -32,6 +33,7 @@ const findOne = async (id) => {
         altitude: beanology.altitude,
         roasterId: roasters.id,
         roasterName: roasters.name,
+        roasterSlug: roasters.slug,
         supplierId: suppliers.id,
         supplierName: suppliers.name
     })

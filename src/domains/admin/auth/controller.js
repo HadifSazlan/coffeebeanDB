@@ -1,7 +1,7 @@
 import passport from "passport";
 import jwt from "jsonwebtoken";
-import {db} from "../../config/db.js";
-import {users} from "../../db/schema/users.js";
+import {db} from "../../../config/db.js";
+import {users} from "../../../db/schema/users.js";
 import bcrypt from "bcrypt";
 
 const login = (req, res, next) => {

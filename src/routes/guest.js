@@ -1,6 +1,6 @@
 /***************************
- GUEST ROUTES
- *****************************/
+        GUEST ROUTES
+*****************************/
 
 import express from "express";
 import beanologyRoutes from '../domains/guest/beanology/routes.js'

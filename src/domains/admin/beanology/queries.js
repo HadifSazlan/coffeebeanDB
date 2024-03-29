@@ -1,5 +1,5 @@
-import {db} from "../../config/db.js";
-import {beanology} from "../../db/schema/beanology.js";
+import {db} from "../../../config/db.js";
+import {beanology} from "../../../db/schema/beanology.js";
 import {eq} from "drizzle-orm";
 
 const findManyBeans = async () => {

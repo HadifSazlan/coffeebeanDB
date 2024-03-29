@@ -1,5 +1,5 @@
-import {db} from "../../config/db.js";
-import {roastology} from "../../db/schema/roastology.js";
+import {db} from "../../../config/db.js";
+import {roastology} from "../../../db/schema/roastology.js";
 import {eq} from "drizzle-orm";
 
 const findManyRoasts = async () => {

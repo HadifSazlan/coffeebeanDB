@@ -1,4 +1,4 @@
-import {findMany, findOne} from './queries.js';
+import {findMany, findById} from './queries.js';
 
 const index = async (req, res) => {
     try {
@@ -14,7 +14,7 @@ const show = async (req, res) => {
     const {id} = req.params;
 
     try {
-        const relation = await findOne(id)
+        const relation = await findById(id)
         res.status(200).json(relation);
     } catch (e) {
         res.status(500).json({msg: e.message || 'Internal server error'});

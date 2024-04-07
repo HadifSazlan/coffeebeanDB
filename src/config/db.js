@@ -5,6 +5,10 @@ dotenv.config();
 import {drizzle} from "drizzle-orm/node-postgres";
 import pkg from 'pg';
 
+import * as schemaRoasters from "../db/schema/roasters.js"
+import * as schemaBeans from "../db/schema/beanology.js"
+import * as schemaSuppliers from "../db/schema/suppliers.js"
+
 const {Client} = pkg;
 
 const host = process.env.DB_HOST ?? 'localhost';
@@ -21,4 +25,10 @@ const client = new Client({
 
 await client.connect();
 
-export const db = drizzle(client);
+export const db = drizzle(client, {
+    schema: {
+        ...schemaRoasters,
+        ...schemaBeans,
+        ...schemaSuppliers
+    }
+});

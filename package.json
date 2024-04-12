@@ -2,10 +2,10 @@
   "name": "coffeebeandb",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon index.js",
     "migration:generate": "drizzle-kit generate:pg",
     "migration:push": "drizzle-kit push:pg",
     "migrate": "drizzle-kit generate:pg && drizzle-kit push:pg",

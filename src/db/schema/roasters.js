@@ -1,6 +1,6 @@
 import {pgTable, serial, varchar, timestamp} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
-import {beanology} from "./beanology.js";
+import {beans} from "./beans.js";
 
 export const roasters = pgTable('roasters', {
     id: serial('id').primaryKey(),
@@ -13,5 +13,5 @@ export const roasters = pgTable('roasters', {
 });
 
 export const roastersRelations = relations(roasters, ({ many }) => ({
-    beans: many(beanology)
+    beans: many(beans)
 }));

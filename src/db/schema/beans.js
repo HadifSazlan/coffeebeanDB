@@ -3,7 +3,7 @@ import {roasters} from "./roasters.js";
 import {suppliers} from "./suppliers.js";
 import {relations} from "drizzle-orm";
 
-export const beanology = pgTable('beanology', {
+export const beans = pgTable('beans', {
     id: serial('id').primaryKey(),
     roaster_id: integer('roaster_id').references(() => roasters.id),
     supplier_id: integer('supplier_id').references(() => suppliers.id),
@@ -17,13 +17,13 @@ export const beanology = pgTable('beanology', {
     updated_at: timestamp('updated_at')
 });
 
-export const beansRelations = relations(beanology, ({ one }) => ({
+export const beansRelations = relations(beans, ({ one }) => ({
     roaster: one(roasters, {
-        fields: [beanology.roaster_id],
+        fields: [beans.roaster_id],
         references: [roasters.id],
     }),
     supplier: one(suppliers, {
-        fields: [beanology.roaster_id],
+        fields: [beans.roaster_id],
         references: [suppliers.id],
     }),
 }));

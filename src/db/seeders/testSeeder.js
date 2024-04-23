@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 import {drizzle} from 'drizzle-orm/node-postgres';
-import {beanology} from '../schema/beanology.js';
+import {beans} from '../schema/beans.js';
 import {roasters} from '../schema/roasters.js';
 import {suppliers} from '../schema/suppliers.js';
 import pkg from 'pg';
@@ -30,13 +30,13 @@ async function main() {
 
     await db.insert(roasters).values(roastersData).returning();
     await db.insert(suppliers).values(suppliersData).returning();
-    await db.insert(beanology).values(beanologyData).returning();
+    await db.insert(beans).values(beansData).returning();
 
     console.log('Data insertion completed');
     process.exit(0);
 }
 
-const beanologyData = [
+const beansData = [
     {
         id: 1,
         roaster_id: 1,

@@ -1,9 +1,9 @@
 import {db} from "../../../config/db.js";
-import {beanology} from "../../../db/schema/beanology.js";
+import {beans} from "../../../db/schema/beans.js";
 import {eq} from "drizzle-orm";
 
 const findMany = async () => {
-    return await db.query.beanology.findMany({
+    return await db.query.beans.findMany({
         with: {
             roaster: true,
             supplier: true
@@ -13,8 +13,8 @@ const findMany = async () => {
 
 const findById = async (id) => {
 
-    return await db.query.beanology.findFirst({
-        where: eq(beanology.id, id),
+    return await db.query.beans.findFirst({
+        where: eq(beans.id, id),
         with: {
             roaster: true,
             supplier: true

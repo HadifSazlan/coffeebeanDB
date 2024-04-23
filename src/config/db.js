@@ -6,7 +6,7 @@ import {drizzle} from "drizzle-orm/node-postgres";
 import pkg from 'pg';
 
 import * as schemaRoasters from "../db/schema/roasters.js"
-import * as schemaBeans from "../db/schema/beanology.js"
+import * as schemaBeans from "../db/schema/beans.js"
 import * as schemaSuppliers from "../db/schema/suppliers.js"
 
 const {Client} = pkg;

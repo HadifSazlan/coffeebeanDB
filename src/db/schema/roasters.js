@@ -9,7 +9,7 @@ export const roasters = pgTable('roasters', {
     email: varchar('email', {length: 50}),
     phone: varchar('phone', {length: 20}),
     created_at: timestamp('created_at', {precision: 6, withTimezone: true}).defaultNow(),
-    updated_at: timestamp('created_at', {precision: 6, withTimezone: true})
+    updated_at: timestamp('updated_at', {precision: 6, withTimezone: true})
 });
 
 export const roastersRelations = relations(roasters, ({ many }) => ({

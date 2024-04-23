@@ -46,7 +46,8 @@ const beansData = [
         origin: 'Ethiopia',
         flavor: 'Fruity and floral',
         process: 'Washed',
-        altitude: '2000'
+        altitude: '2000',
+        link: 'https://bean.com/test-1'
     },
     {
         id: 2,
@@ -57,7 +58,8 @@ const beansData = [
         origin: 'Colombia',
         flavor: 'Chocolate and nutty',
         process: 'Natural',
-        altitude: '1500 meters',
+        altitude: 1500,
+        link: 'https://bean.com/test-2'
     },
     {
         id: 3,
@@ -68,7 +70,8 @@ const beansData = [
         origin: 'Brazil',
         flavor: 'Caramel and nutty',
         process: 'Semi-washed',
-        altitude: '1200 meters',
+        altitude: 1200,
+        link: 'https://bean.com/test-3'
     },
     {
         id: 4,
@@ -79,7 +82,8 @@ const beansData = [
         origin: 'Guatemala',
         flavor: 'Citrus and floral',
         process: 'Fully washed',
-        altitude: '1600 meters',
+        altitude: 1600,
+        link: 'https://bean.com/test-4'
     },
     {
         id: 5,
@@ -90,7 +94,8 @@ const beansData = [
         origin: 'Kenya',
         flavor: 'Berry-like and winey',
         process: 'Double fermented',
-        altitude: '1800 meters',
+        altitude: 1800,
+        link: 'https://bean.com/test-5'
     },
 ];
 

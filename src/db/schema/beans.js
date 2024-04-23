@@ -12,10 +12,10 @@ export const beans = pgTable('beans', {
     origin: varchar('origin', {length: 50}),
     flavor: varchar('flavor', {length: 70}),
     process: varchar('process', {length: 50}),
-    altitude: varchar('altitude', {length: 50}),
+    altitude: integer('altitude'),
     link: varchar('link', {length: 230}),
     created_at: timestamp('created_at', {precision: 6, withTimezone: true}).defaultNow(),
-    updated_at: timestamp('created_at', {precision: 6, withTimezone: true})
+    updated_at: timestamp('updated_at', {precision: 6, withTimezone: true})
 });
 
 export const beansRelations = relations(beans, ({one}) => ({

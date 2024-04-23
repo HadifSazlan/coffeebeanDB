@@ -7,5 +7,5 @@ export const users = pgTable('users', {
     name: varchar('name', {length: 70}),
     phone: varchar('phone', {length: 20}),
     created_at: timestamp('created_at', {precision: 6, withTimezone: true}).defaultNow(),
-    updated_at: timestamp('created_at', {precision: 6, withTimezone: true})
+    updated_at: timestamp('updated_at', {precision: 6, withTimezone: true})
 });

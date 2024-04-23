@@ -46,7 +46,7 @@ const beansData = [
         origin: 'Ethiopia',
         flavor: 'Fruity and floral',
         process: 'Washed',
-        altitude: '2000 meters',
+        altitude: '2000'
     },
     {
         id: 2,

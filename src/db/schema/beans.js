@@ -5,8 +5,8 @@ import {relations} from "drizzle-orm";
 
 export const beans = pgTable('beans', {
     id: serial('id').primaryKey(),
-    roaster_id: integer('roaster_id').references(() => roasters.id),
-    supplier_id: integer('supplier_id').references(() => suppliers.id),
+    roaster_id: integer('roaster_id'),
+    supplier_id: integer('supplier_id'),
     name: varchar('name', {length: 70}).notNull(),
     slug: varchar('slug', {length: 70}).notNull(),
     origin: varchar('origin', {length: 50}),

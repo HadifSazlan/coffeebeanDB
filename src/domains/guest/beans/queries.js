@@ -6,7 +6,12 @@ const findMany = async () => {
     return await db.query.beans.findMany({
         with: {
             roaster: true,
-            supplier: true
+            supplier: true,
+            beanFlavours: {
+                with: {
+                    flavour: true
+                }
+            },
         }
     })
 };
@@ -17,7 +22,12 @@ const findById = async (id) => {
         where: eq(beans.id, id),
         with: {
             roaster: true,
-            supplier: true
+            supplier: true,
+            beanFlavours: {
+                with: {
+                    flavour: true
+                }
+            },
         }
     })
 };

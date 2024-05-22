@@ -14,6 +14,7 @@
    ```
    APP_NAME=coffeebean
    APP_URL=http://localhost:3000
+   FE_URL=http://localhost:4000
    ```
 3. Update the database details in `.env`
    ```
@@ -31,15 +32,15 @@
    ```
    JWT_SECRET=
    ```
-6. `npm install`
-7. `npm start`
+6. `yarn install`
+7. `yarn start`
 8. To generate mysql files and run migration 
    ```
-   npm run migrate
+   yarn migrate
    ```
 9. To seed the database with test data
    ```
-   npm run db:seed
+   yarn db:seed
    ```
 
 ## References

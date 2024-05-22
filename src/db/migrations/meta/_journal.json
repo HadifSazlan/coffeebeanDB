@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1716126089334,
+      "tag": "0000_fixed_leader",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1716339714976,
+      "tag": "0001_aberrant_omega_flight",
+      "breakpoints": true
+    }
+  ]
+}

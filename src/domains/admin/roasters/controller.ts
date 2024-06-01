@@ -5,7 +5,8 @@ import {
     findOneRoaster,
     updateRoaster,
     deleteRoaster,
-} from './queries';
+} from './queries.js';
+import {addRoasterRequest, updateRoasterRequest} from './types.js'
 
 const index = async (req: Request, res: Response) => {
     try {

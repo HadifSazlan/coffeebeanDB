@@ -3,10 +3,14 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 import {drizzle} from 'drizzle-orm/node-postgres';
-import {beans} from '../schema/beans';
-import {roasters} from '../schema/roasters';
-import {suppliers} from '../schema/suppliers';
+import {beans} from '../schema/beans.js';
+import {roasters} from '../schema/roasters.js';
+import {suppliers} from '../schema/suppliers.js';
 import pkg from 'pg';
+import {RoastType} from './../../enums/RoastType.js'
+import {BrewType} from './../../enums/BrewType.js'
+import {BeanOrigin} from './../../enums/BeanOrigin.js'
+import {ProcessMethod} from './../../enums/ProcessMethod.js'
 
 const {Pool} = pkg;
 

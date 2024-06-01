@@ -1,4 +1,4 @@
-enum RoastType {
+export enum RoastType {
     LIGHT = 'light',
     MEDIUM_LIGHT = 'medium-light',
     MEDIUM = 'medium',

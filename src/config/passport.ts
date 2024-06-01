@@ -1,9 +1,9 @@
 import passport from 'passport';
 import passportJWT from 'passport-jwt';
 import {Strategy as LocalStrategy} from 'passport-local'
-import {db} from "./db";
+import {db} from "./db.js";
 import {eq} from "drizzle-orm";
-import {users} from "../db/schema/users";
+import {users} from "../db/schema/users.js";
 import bcrypt from "bcrypt";
 import {StrategyOptions} from 'passport-jwt'
 

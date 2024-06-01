@@ -1,5 +1,5 @@
-import {db} from "../../../config/db";
-import {roasters} from "../../../db/schema/roasters";
+import {db} from "../../../config/db.js";
+import {roasters} from "../../../db/schema/roasters.js";
 import {eq} from "drizzle-orm"
 
 const findMany = async () => {

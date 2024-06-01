@@ -1,7 +1,7 @@
 import passport from "passport";
 import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction} from 'express';
-import {IUser} from "./types";
+import {IUser} from "./types.js";
 
 
 const login = (req: Request, res: Response , next: NextFunction) => {

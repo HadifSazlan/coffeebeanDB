@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import {findMany, findById} from './queries';
+import {findMany, findById} from './queries.js';
 
 const index = async (req: Request, res: Response) => {
     try {

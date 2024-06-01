@@ -1,6 +1,7 @@
-import {db} from "../../../config/db";
-import {roasters} from "../../../db/schema/roasters";
+import {db} from "../../../config/db.js";
+import {roasters} from "../../../db/schema/roasters.js";
 import {eq} from "drizzle-orm";
+import {addRoasterRequest, updateRoasterRequest} from './types.js'
 
 const findManyRoasters = async () => {
     return db.select().from(roasters);

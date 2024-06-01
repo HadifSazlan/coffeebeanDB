@@ -5,8 +5,8 @@ import {
     findOneSupplier,
     updateSupplier,
     deleteSupplier,
-} from './queries';
-import {addSupplierRequest, updateSupplierRequest} from "./types";
+} from './queries.js';
+import {addSupplierRequest, updateSupplierRequest} from "./types.js";
 
 
 const index = async (req: Request, res: Response) => {

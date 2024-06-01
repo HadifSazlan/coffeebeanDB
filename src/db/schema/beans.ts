@@ -1,7 +1,7 @@
 import {pgTable, serial, varchar, timestamp, integer} from "drizzle-orm/pg-core";
-import {roasters} from "./roasters";
-import {suppliers} from "./suppliers";
-import {beanFlavours} from "./bean_flavours";
+import {roasters} from "./roasters.js";
+import {suppliers} from "./suppliers.js";
+import {beanFlavours} from "./bean_flavours.js";
 import {relations} from "drizzle-orm";
 
 export const beans = pgTable('beans', {

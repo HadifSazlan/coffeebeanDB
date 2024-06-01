@@ -1,6 +1,8 @@
-import {db} from "../../../config/db";
-import {beans} from "../../../db/schema/beans";
+import {db} from "../../../config/db.js";
+import {beans} from "../../../db/schema/beans.js";
 import {eq} from "drizzle-orm";
+
+import {addBeanRequest, updateBeanRequest} from './types.js'
 
 const findManyBeans = async () => {
     return db.select().from(beans);

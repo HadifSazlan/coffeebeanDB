@@ -5,7 +5,9 @@ import {
   findOneBean,
   updateBean,
   deleteBean,
-} from './queries';
+} from './queries.js';
+
+import {addBeanRequest, updateBeanRequest} from './types.js'
 
 const index = async (req: Request, res: Response) => {
   try {

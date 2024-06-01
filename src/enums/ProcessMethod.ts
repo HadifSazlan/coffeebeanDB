@@ -1,4 +1,4 @@
-enum ProcessMethod {
+export enum ProcessMethod {
     WASHED = 'washed',
     SEMI_WASHED = 'semi-washed',
     FULLY_WASHED = 'fully-washed',

@@ -5,11 +5,11 @@ dotenv.config();
 import {drizzle} from "drizzle-orm/node-postgres";
 import pkg from 'pg';
 
-import * as schemaRoasters from "../db/schema/roasters"
-import * as schemaBeans from "../db/schema/beans"
-import * as schemaBeanFlavours from "../db/schema/bean_flavours"
-import * as schemaFlavours from "../db/schema/flavours"
-import * as schemaSuppliers from "../db/schema/suppliers"
+import * as schemaRoasters from "../db/schema/roasters.js"
+import * as schemaBeans from "../db/schema/beans.js"
+import * as schemaBeanFlavours from "../db/schema/bean_flavours.js"
+import * as schemaFlavours from "../db/schema/flavours.js"
+import * as schemaSuppliers from "../db/schema/suppliers.js"
 
 const {Client} = pkg;
 

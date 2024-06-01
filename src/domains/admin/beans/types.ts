@@ -1,4 +1,4 @@
-interface addBeanRequest {
+export interface addBeanRequest {
     name:string
     slug: string
     roaster_id?: number
@@ -11,7 +11,7 @@ interface addBeanRequest {
     link?:string
 }
 
-interface updateBeanRequest {
+export interface updateBeanRequest {
     name?:string
     slug?: string
     roaster_id?: number|null

@@ -1,4 +1,4 @@
-enum BeanOrigin {
+export enum BeanOrigin {
     ETHIOPIA = 'ethiopia',
     COLOMBIA = 'colombia',
     BRAZIL = 'brazil',

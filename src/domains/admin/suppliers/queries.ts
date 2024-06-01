@@ -1,7 +1,7 @@
-import {db} from "../../../config/db";
-import {suppliers} from "../../../db/schema/suppliers";
+import {db} from "../../../config/db.js";
+import {suppliers} from "../../../db/schema/suppliers.js";
 import {eq} from "drizzle-orm";
-import {addSupplierRequest, updateSupplierRequest} from "./types";
+import {addSupplierRequest, updateSupplierRequest} from "./types.js";
 
 const findManySuppliers = async () => {
     return db.select().from(suppliers);

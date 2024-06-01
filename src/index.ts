@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import authRoutes from './domains/admin/auth/routes';
-import adminRouter from './routes/admin'
-import guestRouter from './routes/guest'
+import authRoutes from './domains/admin/auth/routes.js';
+import adminRouter from './routes/admin.js'
+import guestRouter from './routes/guest.js'
 import cors from 'cors'
 
 import passport from "passport";

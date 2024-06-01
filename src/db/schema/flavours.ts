@@ -1,6 +1,6 @@
 import {pgTable, serial, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
-import {beanFlavours} from "./bean_flavours";
+import {beanFlavours} from "./bean_flavours.js";
 
 export const flavours = pgTable('flavours', {
     id: serial('id').primaryKey(),

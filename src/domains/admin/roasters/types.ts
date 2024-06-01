@@ -1,11 +1,11 @@
-interface addRoasterRequest {
+export interface addRoasterRequest {
     name: string
     slug: string
     email?: string
     phone?:string
 }
 
-interface updateRoasterRequest {
+export interface updateRoasterRequest {
     name?: string
     slug?: string
     email?: string
